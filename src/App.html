@@ -1,0 +1,23 @@
+<svelte:component this="{component}" />
+<script>
+  // router
+  import page from "page";
+
+  // Routes
+  import Home from "./pages/Home.html";
+  import About from "./pages/About.html";
+
+  // state
+  let component = Home;
+
+  // route handlers
+  page("/", () => {
+    component = Home;
+  });
+
+  page("/about", () => {
+    component = About;
+  });
+
+  page.start();
+</script>
